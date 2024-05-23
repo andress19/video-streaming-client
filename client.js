@@ -13,7 +13,7 @@ async function startVideoStream() {
                 socket.send(event.data);
             }
         };
-        mediaRecorder.start(100); // Graba en fragmentos de 100 ms
+        mediaRecorder.start(4000); // Graba en fragmentos de 100 ms
     } catch (error) {
         console.error('Error accessing media devices.', error);
     }
