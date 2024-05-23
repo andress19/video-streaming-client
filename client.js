@@ -1,6 +1,6 @@
 const localVideo = document.getElementById('localVideo');
 const remoteVideo = document.getElementById('remoteVideo');
-const socket = new WebSocket('ws://buttercup-sprinkle-dragonfruit.glitch.me');
+const socket = new WebSocket('wss://buttercup-sprinkle-dragonfruit.glitch.me');
 
 async function startVideoStream() {
     try {
