@@ -23,6 +23,7 @@ startVideoStream();
 
 socket.onmessage = (event) => {
     const videoBlob = new Blob([event.data], { type: 'video/webm' });
+    console.log(URL.createObjectURL(videoBlob));
     remoteVideo.src = URL.createObjectURL(videoBlob);
 };
 
