@@ -18,8 +18,10 @@ async function startStreaming() {
       const sourceBuffer = remoteStream.addSourceBuffer('video/webm; codecs="vp8"');
       sourceBuffer.appendBuffer(event.data);
     });
-    console.log(remoteVideo.src);
-    remoteVideo.src = URL.createObjectURL(remoteStream);
+    if(!remoteVideo.src) {
+      console.log(remoteVideo.src);
+      remoteVideo.src = URL.createObjectURL(remoteStream); 
+    }
   };
 
   const mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm; codecs="vp8"' });
